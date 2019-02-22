@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+        ">       
+	<dubbo:application name="pay_email_consumer" />             
+	<!-- registry address, used for service to register itself --> 
+	<dubbo:registry protocol="zookeeper" address="192.168.110.22:2181" />
+	<!--发送邮件服务-->    
+	<dubbo:reference interface="com.study.demo.IEmailService" id="emailService"  />
+</beans>

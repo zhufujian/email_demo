@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo
+	http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+    <bean id="configProperties"
+          class="com.study.demo.utils.SpringConfigUtil">
+        <property name="locations">
+            <list>
+                <value>classpath:dubbo.properties</value>
+                <value>classpath:pay_email.properties</value>
+                <value>classpath:log4j.properties</value>
+            </list>
+        </property>
+        <property name="ignoreResourceNotFound" value="true"/>
+    </bean>
+    <!-- 注释配置 -->
+    <context:annotation-config/>
+    <dubbo:application name="${dubbo.application.name}"/>
+    <!-- registry address, used for service to register itself -->
+    <dubbo:registry protocol="zookeeper" address="${dubbo.registry.address}"/>
+    <dubbo:protocol name="${dubbo.protocol.name}" port="${dubbo.protocol.port}"/>
+    <dubbo:provider timeout="${dubbo.server.timeout}" retries="0"/>
+    <!-- 声明需要暴露的服务接口-->
+    <bean id="emailService" class="com.study.demo.RPCService.EmailService"/>
+    <dubbo:service interface="com.study.demo.IEmailService" ref="emailService"/>
+</beans>

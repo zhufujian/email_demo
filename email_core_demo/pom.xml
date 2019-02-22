@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+        <artifactId>email_demo</artifactId>
+        <groupId>com.study.demo</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+  <artifactId>email_core_demo</artifactId>
+
+  <name>email_core_demo</name>
+
+  <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<dubbo.version>2.5.6</dubbo.version>
+		<spring.version>4.3.10.RELEASE</spring.version>
+		<ibatis.version>2.3.4.726</ibatis.version>
+		<junit.version>4.11</junit.version>
+		<log4j.version>1.2.17</log4j.version>
+		<zookeeper.version>3.4.9</zookeeper.version>
+		<zookeeper.client.version>0.1</zookeeper.client.version>
+		<commons.collections.version>3.2.1</commons.collections.version>
+		<commons.lang.version>2.4</commons.lang.version>
+		<commons.collections.version>3.2.1</commons.collections.version>
+		<commons.lang.version>2.4</commons.lang.version>
+	</properties>
+
+  <dependencies>
+  	<dependency>
+  		<groupId>com.study.demo</groupId>
+  		<artifactId>email_interface_demo</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  	
+  	  <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.1.31.sec01</version>
+        </dependency>
+        <!-- dubbo dependencies -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>${dubbo.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>${zookeeper.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>log4j</artifactId>
+                    <groupId>log4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>jmxtools</artifactId>
+                    <groupId>com.sun.jdmk</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>jline</artifactId>
+                    <groupId>jline</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>jmxri</artifactId>
+                    <groupId>com.sun.jmx</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>jms</artifactId>
+                    <groupId>javax.jms</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>activation</artifactId>
+                    <groupId>javax.activation</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>mail</artifactId>
+                    <groupId>javax.mail</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.github.sgroschupf</groupId>
+            <artifactId>zkclient</artifactId>
+            <version>${zookeeper.client.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>log4j</artifactId>
+                    <groupId>log4j</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- test -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>${commons.collections.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+           <version>${commons.lang.version}</version>
+        </dependency>
+        <!--安全log4j包-->
+        <dependency>
+            <groupId>com.lianpay</groupId>
+            <artifactId>log4j-secure</artifactId>
+            <version>1.2.18</version>
+        </dependency>
+        <dependency>
+            <!--邮箱发送  -->
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.5.0-b01</version>
+            <scope>compile</scope>
+        </dependency>
+  	
+  </dependencies>
+</project>

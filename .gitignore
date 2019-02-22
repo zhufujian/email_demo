@@ -21,3 +21,23 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+.project
+.settings/.jsdtscope
+.settings/org.eclipse.m2e.core.prefs
+.settings/org.eclipse.wst.common.component
+.settings/org.eclipse.wst.common.project.facet.core.xml
+.settings/org.eclipse.wst.jsdt.ui.superType.container
+.settings/org.eclipse.wst.jsdt.ui.superType.name
+.settings/org.jboss.ide.eclipse.as.core.prefs
+email_core_demo/.settings/org.eclipse.core.resources.prefs
+email_core_demo/.settings/org.eclipse.jdt.core.prefs
+email_core_demo/.settings/org.eclipse.m2e.core.prefs
+email_core_demo/.classpath
+email_deploy_demo/.classpath
+email_deploy_demo/.settings/org.eclipse.jdt.core.prefs
+email_deploy_demo/.settings/org.eclipse.m2e.core.prefs
+email_deploy_demo/.settings/org.jboss.ide.eclipse.as.core.prefs
+email_deploy_demo/target/maven-archiver/pom.properties
+email_interface_demo/.classpath
+email_interface_demo/.settings/org.eclipse.jdt.core.prefs
+email_interface_demo/.settings/org.eclipse.m2e.core.prefs
